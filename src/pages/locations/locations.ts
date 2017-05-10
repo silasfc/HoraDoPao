@@ -5,7 +5,7 @@ import { NavController } from 'ionic-angular';
   selector: 'settings',
   templateUrl: 'settings.html'
 })
-export class SettingsPage {
+export class LocationsPage {
 
   constructor(public navCtrl: NavController) {
 
