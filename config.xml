@@ -84,6 +84,7 @@
     <plugin name="cordova-plugin-device" spec="1.1.4" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
     <plugin name="cordova-plugin-googlemaps" spec="~1.4.0">
-        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCthlLD3wHMTJq_NpKAUEXO7dlB3TSSkG8" />
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBvtQcdq_qazxrO7An2NeG0Vm2EtmORpgA" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyBvtQcdq_qazxrO7An2NeG0Vm2EtmORpgA" />
     </plugin>
 </widget>
