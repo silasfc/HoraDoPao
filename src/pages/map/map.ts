@@ -41,9 +41,9 @@ export class MapPage {
         title: 'Algum lugar em Nova York'
       };
 
-      // let marker = map.addMarker(markeroptions).then((marker: Marker) => {
-      //   marker.showInfoWindow();
-      // })
+      let marker = map.addMarker(markeroptions).then((marker: Marker) => {
+        marker.showInfoWindow();
+      })
     })
   }
 }
