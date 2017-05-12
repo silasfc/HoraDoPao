@@ -5,19 +5,20 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { LocationsPage } from '../pages/locations/locations';
+import { MapPage } from '../pages/map/map';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { GoogleMaps } from '@ionic-native/google-maps'
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
-    LocationsPage,
+    MapPage,
     HomePage,
     TabsPage
   ],
@@ -30,13 +31,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     ContactPage,
-    LocationsPage,
+    MapPage,
     HomePage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
