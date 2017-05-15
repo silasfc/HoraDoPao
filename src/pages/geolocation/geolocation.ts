@@ -21,7 +21,7 @@ export class GeolocationPage {
       enableHighAccuracy: true
     };
     this.locationAccuracy.canRequest().then((canRequest: boolean) => {
-      if (canRequest) {
+      // if (canRequest) {
         this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
           this.geolocation.getCurrentPosition(options).then((position: Geoposition) => {
             this.getcountry(position);
@@ -31,7 +31,7 @@ export class GeolocationPage {
         }, (error) => {
           alert(error);
         });
-      }
+      // }
     });
   }
 
