@@ -27,10 +27,10 @@ export class GeolocationPage {
             this.getcountry(position);
           }).catch((err) => {
             alert(err);
-          })
-        })
+          });
+        });
       }
-    })
+    });
   }
 
   getcountry(pos) {
@@ -39,7 +39,8 @@ export class GeolocationPage {
         message: res.countryName,
         duration: 4000
       });
-    })
+      country.present();
+    });
   }
 
 }
