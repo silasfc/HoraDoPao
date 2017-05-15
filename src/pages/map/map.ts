@@ -27,23 +27,23 @@ export class MapPage {
   loadMap() {
     let element = document.getElementById('map');
     let map: GoogleMap = this.googleMaps.create(element, {});
-    let latlng = new LatLng(40.7128, -74.0059);
+    let latlng = new LatLng(-10.1779967, -48.3340244);
 
     map.one(GoogleMapsEvent.MAP_READY).then(() => {
       let position: CameraPosition = {
         target: latlng,
-        zoom: 10,
+        zoom: 13,
         tilt: 30
       }
       map.moveCamera(position);
       let markeroptions: MarkerOptions = {
         position: latlng,
-        title: 'Algum lugar em Nova York'
+        title: 'Palácio Araguaia'
       };
 
-      let marker = map.addMarker(markeroptions).then((marker: Marker) => {
+      map.addMarker(markeroptions).then((marker: Marker) => {
         marker.showInfoWindow();
-      })
-    })
+      });
+    });
   }
 }
