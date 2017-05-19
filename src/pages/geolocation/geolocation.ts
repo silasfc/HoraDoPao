@@ -24,6 +24,7 @@ export class GeolocationPage {
       // if (canRequest) {
         this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
           this.geolocation.getCurrentPosition(options).then((position: Geoposition) => {
+            alert(position.coords.latitude);
             this.getcountry(position);
           }).catch((err) => {
             alert(err);

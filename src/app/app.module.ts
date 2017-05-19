@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+// import { AboutPage } from '../pages/about/about';
+// import { ContactPage } from '../pages/contact/contact';
 import { MapPage } from '../pages/map/map';
 import { GeolocationPage } from '../pages/geolocation/geolocation';
-import { HomePage } from '../pages/home/home';
+// import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,11 +21,11 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    // AboutPage,
+    // ContactPage,
     MapPage,
     GeolocationPage,
-    HomePage,
+    // HomePage,
     TabsPage
   ],
   imports: [
@@ -35,11 +35,11 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    // AboutPage,
+    // ContactPage,
     MapPage,
     GeolocationPage,
-    HomePage,
+    // HomePage,
     TabsPage
   ],
   providers: [

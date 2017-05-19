@@ -11,9 +11,9 @@ import { GeolocationPage } from '../geolocation/geolocation';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  // tab1Root = HomePage;
+  // tab2Root = AboutPage;
+  // tab3Root = ContactPage;
   tab4Root = MapPage;
   tab5Root = GeolocationPage;
 
