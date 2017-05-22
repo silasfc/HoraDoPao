@@ -13,24 +13,33 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
 export class GeolocationPage {
 
-  constructor(public navCtrl: NavController, public geolocation: Geolocation, public geocoder: NativeGeocoder, public toaster: ToastController, public locationAccuracy: LocationAccuracy) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public geolocation: Geolocation,
+    public geocoder: NativeGeocoder,
+    public toaster: ToastController,
+    private locationAccuracy: LocationAccuracy
+  ) {}
 
   geolocate() {
     let options = {
       enableHighAccuracy: true
     };
+
     this.locationAccuracy.canRequest().then((canRequest: boolean) => {
+      alert(canRequest);
       // if (canRequest) {
         this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
           this.geolocation.getCurrentPosition(options).then((position: Geoposition) => {
-            alert(position.coords.latitude);
+            alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
             this.getcountry(position);
           }).catch((err) => {
-            alert(err);
+            // alert(err);
+            alert('Não consegui sua localização');
           });
         }, (error) => {
-          alert(error);
+          // alert(error);
+          alert('Não consegui a permissão necessária');
         });
       // }
     });
