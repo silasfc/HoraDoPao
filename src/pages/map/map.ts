@@ -36,14 +36,19 @@ export class MapPage {
         enableHighAccuracy: true
       };
 
-      this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
-        this.geolocation.getCurrentPosition(options).then((position: Geoposition) => {
-          latlng = new LatLng(position.coords.latitude, position.coords.longitude);
-        }).catch((err) => {
-          alert(err);
-        });
-      }, (error) => {
-        alert(error);
+      this.locationAccuracy.canRequest().then((canRequest: boolean) => {
+        // if (canRequest) {
+          this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
+            this.geolocation.getCurrentPosition(options).then((position: Geoposition) => {
+              latlng = new LatLng(position.coords.latitude, position.coords.longitude);
+              alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+            }).catch((err) => {
+              alert(err);
+            });
+          }, (error) => {
+            alert(error);
+          });
+        // }
       });
 
       let position: CameraPosition = {

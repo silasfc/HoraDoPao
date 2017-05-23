@@ -27,22 +27,21 @@ export class GeolocationPage {
     };
 
     this.locationAccuracy.canRequest().then((canRequest: boolean) => {
-      alert(canRequest);
-      // if (canRequest) {
+      if (canRequest) {
         this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
           this.geolocation.getCurrentPosition(options).then((position: Geoposition) => {
             alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
             this.getcountry(position);
           }).catch((err) => {
-            // alert(err);
-            alert('Não consegui sua localização');
+            alert(err);
           });
         }, (error) => {
-          // alert(error);
-          alert('Não consegui a permissão necessária');
+          alert(error);
         });
-      // }
+      }
+
     });
+
   }
 
   getcountry(position) {
