@@ -41,7 +41,25 @@ export class MapPage {
           this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
             this.geolocation.getCurrentPosition(options).then((position: Geoposition) => {
               latlng = new LatLng(position.coords.latitude, position.coords.longitude);
-              alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+
+              let pos: CameraPosition = {
+                target: latlng,
+                zoom: 14,
+                tilt: 30
+              }
+
+              map.moveCamera(pos);
+
+              let markeroptions: MarkerOptions = {
+                position: latlng,
+                title: 'Minha localização'
+              };
+
+              map.addMarker(markeroptions).then((marker: Marker) => {
+                marker.showInfoWindow();
+              });
+
+              // alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
             }).catch((err) => {
               alert(err);
             });
@@ -51,22 +69,7 @@ export class MapPage {
         // }
       });
 
-      let position: CameraPosition = {
-        target: latlng,
-        zoom: 14,
-        tilt: 30
-      }
 
-      map.moveCamera(position);
-
-      let markeroptions: MarkerOptions = {
-        position: latlng,
-        title: 'Minha localização'
-      };
-
-      map.addMarker(markeroptions).then((marker: Marker) => {
-        marker.showInfoWindow();
-      });
 
     });
   }
