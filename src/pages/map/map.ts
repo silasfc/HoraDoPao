@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation';
+import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
 import {
   GoogleMap,
@@ -18,8 +19,14 @@ import {
 })
 export class MapPage {
 
-  constructor(public navCtrl: NavController, public googleMaps: GoogleMaps, public geolocation: Geolocation, public locationAccuracy: LocationAccuracy, public alertCtrl: AlertController) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    private googleMaps: GoogleMaps,
+    private geolocation: Geolocation,
+    private geocoder: NativeGeocoder,
+    private locationAccuracy: LocationAccuracy,
+    private toaster: ToastController,
+  ) {}
 
   ngAfterViewInit() {
     this.loadMap();
@@ -44,8 +51,8 @@ export class MapPage {
 
               let pos: CameraPosition = {
                 target: latlng,
-                zoom: 14,
-                tilt: 30
+                zoom: 14
+                // tilt: 30
               }
 
               map.moveCamera(pos);
@@ -59,7 +66,8 @@ export class MapPage {
                 marker.showInfoWindow();
               });
 
-              // alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+              this.getcountry(position);
+
             }).catch((err) => {
               alert(err);
             });
@@ -68,9 +76,16 @@ export class MapPage {
           });
         // }
       });
+    });
+  }
 
-
-
+  getcountry(position) {
+    this.geocoder.reverseGeocode(position.coords.latitude, position.coords.longitude).then((res: NativeGeocoderReverseResult) => {
+      let country = this.toaster.create({
+        message: res.city + ' - ' + res.street + ' Nº ' + res.houseNumber,
+        duration: 4000
+      });
+      country.present();
     });
   }
 }
