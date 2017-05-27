@@ -14,7 +14,6 @@ import { GoogleMaps } from '@ionic-native/google-maps'
 import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
-import { ListaCarroComponent } from '../components/lista-carro/lista-carro';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { ListaCarroComponent } from '../components/lista-carro/lista-carro';
     MapPage,
     GeolocationPage,
     TabsPage,
-    ListaCarroComponent
   ],
   imports: [
     BrowserModule,
