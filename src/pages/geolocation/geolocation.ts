@@ -30,7 +30,6 @@ export class GeolocationPage {
       if (canRequest) {
         this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
           this.geolocation.getCurrentPosition(options).then((position: Geoposition) => {
-            alert("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
             this.getcountry(position);
           }).catch((err) => {
             alert(err);
@@ -47,7 +46,7 @@ export class GeolocationPage {
   getcountry(position) {
     this.geocoder.reverseGeocode(position.coords.latitude, position.coords.longitude).then((res: NativeGeocoderReverseResult) => {
       let country = this.toaster.create({
-        message: res.city + ' - ' + res.street + ' Nº ' + res.houseNumber,
+        message: res.city + '/' + res.postalCode + ' - ' + res.street + ' Nº ' + res.houseNumber,
         duration: 4000
       });
       country.present();

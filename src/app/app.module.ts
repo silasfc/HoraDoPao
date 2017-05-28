@@ -4,7 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { MapPage } from '../pages/map/map';
-import { GeolocationPage } from '../pages/geolocation/geolocation';
+import { PadariasPage } from '../pages/padarias/padarias';
+import { AjustesPage } from '../pages/ajustes/ajustes';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,22 +16,34 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
+import {HttpModule} from '@angular/http';
+import {File} from '@ionic-native/file';
+import {Transfer} from '@ionic-native/transfer';
+import {FilePath} from '@ionic-native/file-path';
+import {Camera} from '@ionic-native/camera';
+import {IonicStorageModule} from '@ionic/storage';
+import {DeviceMotion} from '@ionic-native/device-motion';
+
 @NgModule({
   declarations: [
     MyApp,
     MapPage,
-    GeolocationPage,
+    PadariasPage,
+    AjustesPage,
     TabsPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     MapPage,
-    GeolocationPage,
+    PadariasPage,
+    AjustesPage,
     TabsPage
   ],
   providers: [
@@ -40,6 +53,11 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy';
     Geolocation,
     NativeGeocoder,
     LocationAccuracy,
+    File,
+    Transfer,
+    Camera,
+    FilePath,
+    DeviceMotion,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

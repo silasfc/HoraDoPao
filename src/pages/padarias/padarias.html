@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Padarias</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-list>
+        <ion-row *ngFor="let feed of feeds">
+          <ion-col col-2><img width="30px" src="{{feed.icon}}"></ion-col>
+          <ion-col col-9><span class="nomePadaria"> {{feed.name}}</span><br>
+            <span class="endPadaria">{{feed.formatted_address}}</span>
+          </ion-col>
+          <ion-col col-1>
+            <ion-icon name="pin"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+</ion-content>

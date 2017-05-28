@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation';
 import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
@@ -12,6 +12,7 @@ import {
   MarkerOptions,
   Marker
 } from '@ionic-native/google-maps';
+import { PadariasPage } from '../padarias/padarias'
 
 @Component({
   selector: 'page-map',
@@ -21,6 +22,7 @@ export class MapPage {
 
   constructor(
     public navCtrl: NavController,
+    public navParams: NavParams,
     private googleMaps: GoogleMaps,
     private geolocation: Geolocation,
     private geocoder: NativeGeocoder,
@@ -30,6 +32,22 @@ export class MapPage {
 
   ngAfterViewInit() {
     this.loadMap();
+  }
+
+  minhasPadarias() {
+    let latlng: LatLng;
+    this.geolocation.getCurrentPosition({enableHighAccuracy: true}).then((position: Geoposition) => {
+      latlng = new LatLng(position.coords.latitude, position.coords.longitude);
+
+      this.geocoder.reverseGeocode(position.coords.latitude, position.coords.longitude).then((res: NativeGeocoderReverseResult) => {
+        this.navCtrl.push(PadariasPage, {
+          city: res.city,
+          postalCode: res.postalCode
+        });
+      });
+    }).catch((err) => {
+      alert(err);
+    });
   }
 
   loadMap() {

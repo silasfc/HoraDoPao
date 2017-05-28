@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Ajustes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-5>
+        <ion-thumbnail item-left>
+          <img src="{{lastImage?pathForImage(lastImage):imagemAtual?pathForImage(imagemAtual):imagemPadrao}}" style="width: 100%" />
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col col-7 text-right>
+        <button ion-button icon-left (click)="presentActionSheet()">
+          <ion-icon name="camera"></ion-icon>
+          Trocar
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Usuario</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 text-right>
+        <button ion-button icon-left>
+          <ion-icon name="checkmark-circle"></ion-icon>
+          Salvar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
