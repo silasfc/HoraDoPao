@@ -82,4 +82,4 @@ Substituimos por:
 cordova.system.library.4=com.google.android.gms:play-services-maps:+
 cordova.system.library.5=com.google.android.gms:play-services-location:+
 ```
-[Fonte:] (https://stackoverflow.com/questions/41030573/ionic-v2-google-maps-api-android-build-error-cannot-access-abstractsafeparcelab)
+[Fonte:](https://stackoverflow.com/questions/41030573/ionic-v2-google-maps-api-android-build-error-cannot-access-abstractsafeparcelab)
