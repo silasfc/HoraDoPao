@@ -2,8 +2,8 @@
 
 #### Colaboradores
 
-Caetano Finisterre Burjack da Silva
-Silas Ferraciolli Corrêa
+* Caetano Finisterre Burjack da Silva
+* Silas Ferraciolli Corrêa
 
 #### Desenvolvido com Ionic 2/3 para a disciplina de Plataformas Híbridas - Faculdade Católica
 
