@@ -1,4 +1,10 @@
 ## Projeto Hora do Pão
+
+#### Colaboradores
+
+Caetano Finisterre Burjack da Silva
+Silas Ferraciolli Corrêa
+
 #### Desenvolvido com Ionic 2/3 para a disciplina de Plataformas Híbridas - Faculdade Católica
 
 * 2.0 1a avaliacao
@@ -49,24 +55,31 @@ A imagem capturada é armazenada e o nome dela é salvo no armazenamento do apar
 * npm install --save @ionic-native/native-geocoder
 * npm install --save @ionic-native/location-accuracy
 
+#### Instalação
 
-#### Referências Bibliográficas
+Para instalar, seguir os passos seguintes:
 
-* [Ionic 2 Mobile App in Under 60 Minutes (Traversy Media)](https://www.youtube.com/watch?v=ilM8YorL_jI)
+* Clonar o projeto:
+```
+git clone https://github.com/silasfc/HoraDoPao.git
+```
 
-* [Ionic 2 - Google Maps (Raja Yogan)](https://www.youtube.com/watch?v=jD5yYX1KWXA)
+* Abrir diretório do projeto:
+```
+cd HoraDoPao
+```
 
-* [Ionic 2 - Geolocation and Geocoding (Raja Yogan)](https://www.youtube.com/watch?v=YeVpQG4D7uo)
+* Instalar requisitos:
+```
+npm install
+```
 
-* [Ionic 2 Creating a Page and Navigation between the pages (Anish Nirmal)](https://www.youtube.com/watch?v=JKa5lySRPZw)
+* Adicionar plataformas:
+```
+ionic cordova platform add android
+```
 
-* [A Simple Guide to Navigation in Ionic 2 (Josh Morony)](https://www.joshmorony.com/a-simple-guide-to-navigation-in-ionic-2/)
-
-* [Ionic Native: Working with the Device Motion Plugin](http://blog.ionic.io/ionic-native-working-with-the-device-motion-plugin/)
-
-* [The Complete Ionic Images Guide (Capture, Store & Upload)](https://devdactic.com/ionic-2-images/)
-
-#### Observação IMPORTANTE:
+#### Contornando erro ao dar build/run ()
 
 Provavelmente ocorrerá problema ao fazer o build para Android, devido a diferença de versão usada para pelas bibliotecas do cordova.
 Isso pode ser corrigido no arquivo que está em: HoraDoPao/platforms/android/project-properties
@@ -83,3 +96,19 @@ cordova.system.library.4=com.google.android.gms:play-services-maps:+
 cordova.system.library.5=com.google.android.gms:play-services-location:+
 ```
 Fonte: [Ionic v2 Google Maps API Android Build Error: cannot access AbstractSafeParcelable options.compassEnabled(controls.getBoolean(“compass”));](https://stackoverflow.com/questions/41030573/ionic-v2-google-maps-api-android-build-error-cannot-access-abstractsafeparcelab/41042556#41042556)
+
+#### Referências Bibliográficas
+
+* [Ionic 2 Mobile App in Under 60 Minutes (Traversy Media)](https://www.youtube.com/watch?v=ilM8YorL_jI)
+
+* [Ionic 2 - Google Maps (Raja Yogan)](https://www.youtube.com/watch?v=jD5yYX1KWXA)
+
+* [Ionic 2 - Geolocation and Geocoding (Raja Yogan)](https://www.youtube.com/watch?v=YeVpQG4D7uo)
+
+* [Ionic 2 Creating a Page and Navigation between the pages (Anish Nirmal)](https://www.youtube.com/watch?v=JKa5lySRPZw)
+
+* [A Simple Guide to Navigation in Ionic 2 (Josh Morony)](https://www.joshmorony.com/a-simple-guide-to-navigation-in-ionic-2/)
+
+* [Ionic Native: Working with the Device Motion Plugin](http://blog.ionic.io/ionic-native-working-with-the-device-motion-plugin/)
+
+* [The Complete Ionic Images Guide (Capture, Store & Upload)](https://devdactic.com/ionic-2-images/)
