@@ -65,3 +65,21 @@ A imagem capturada é armazenada e o nome dela é salvo no armazenamento do apar
 * [Ionic Native: Working with the Device Motion Plugin](http://blog.ionic.io/ionic-native-working-with-the-device-motion-plugin/)
 
 * [The Complete Ionic Images Guide (Capture, Store & Upload)](https://devdactic.com/ionic-2-images/)
+
+#### Observação IMPORTANTE:
+
+Provavelmente ocorrerá problema ao fazer o build para Android, devido a diferença de versão usada para pelas bibliotecas do cordova.
+Isso pode ser corrigido no arquivo que está em: HoraDoPao/platforms/android/project-properties
+
+Onde encontramos:
+```
+cordova.system.library.4=com.google.android.gms:play-services-maps:9.8.0
+cordova.system.library.5=com.google.android.gms:play-services-location:9.8.0
+```
+
+Substituimos por:
+```
+cordova.system.library.4=com.google.android.gms:play-services-maps:+
+cordova.system.library.5=com.google.android.gms:play-services-location:+
+```
+[Fonte:] (https://stackoverflow.com/questions/41030573/ionic-v2-google-maps-api-android-build-error-cannot-access-abstractsafeparcelab)
