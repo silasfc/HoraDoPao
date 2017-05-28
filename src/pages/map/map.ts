@@ -35,7 +35,6 @@ export class MapPage {
   loadMap() {
     let element = document.getElementById('map');
     let map: GoogleMap = this.googleMaps.create(element, {});
-    // let latlng: LatLng = new LatLng(-10.2001416, -48.3200967);
     let latlng: LatLng;
 
     map.one(GoogleMapsEvent.MAP_READY).then(() => {
